@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firewatch Animation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #fff;
+            overflow: hidden;
+        }
+
+        .scene {
+            position: relative;
+            width: 300px;
+            height: 500px;
+            background: linear-gradient(180deg, #f5dcc8 0%, #f5b88a 50%, #d97e4a 100%);
+            border-radius: 150px 150px 150px 150px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            z-index: 1;
+        }
+
+        .sky {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60%;
+            background: linear-gradient(180deg, #f5dcc8 0%, #f5b88a 100%);
+            z-index: 1;
+        }
+
+        .cloud {
+            position: absolute;
+            background: #fff;
+            border-radius: 50px;
+            animation: cloudMove 20s linear infinite;
+            z-index: 2;
+        }
+
+        .cloud1 {
+            width: 80px;
+            height: 30px;
+            top: 30px;
+            left: -100px;
+            animation-delay: 0s;
+        }
+
+        .cloud1::before {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: #fff;
+            border-radius: 50%;
+            top: -15px;
+            left: 15px;
+        }
+
+        .cloud2 {
+            width: 100px;
+            height: 40px;
+            top: 80px;
+            left: -120px;
+            animation-delay: 10s;
+        }
+
+        .cloud2::before {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            border-radius: 50%;
+            top: -20px;
+            left: 20px;
+        }
+
+        @keyframes cloudMove {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(500px); }
+        }
+
+        .mountain {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0;
+            height: 0;
+            border-left: 150px solid transparent;
+            border-right: 150px solid transparent;
+            border-bottom: 220px solid #e67e3a;
+            z-index: 2;
+        }
+
+        .mountain-back {
+            position: absolute;
+            top: 45%;
+            left: 20%;
+            transform: translate(-50%, -50%);
+            width: 0;
+            height: 0;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+            border-bottom: 170px solid #d97040;
+            z-index: 1;
+            opacity: 0.7;
+        }
+
+        .tower {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 4;
+        }
+
+        .tower-cabin {
+            position: relative;
+            width: 100px;
+            height: 50px;
+            background: #8b3a3a;
+            margin: 0 auto;
+        }
+
+        .tower-roof {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 55px solid transparent;
+            border-right: 55px solid transparent;
+            border-bottom: 30px solid #6b2828;
+        }
+
+        .flag-pole {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 25px;
+            background: #4a1818;
+        }
+
+        .flag {
+            position: absolute;
+            top: 0;
+            left: 2px;
+            width: 15px;
+            height: 8px;
+            background: #a84444;
+            animation: flagWave 2s ease-in-out infinite;
+        }
+
+        @keyframes flagWave {
+            0%, 100% { transform: skewX(0deg); }
+            50% { transform: skewX(-5deg); }
+        }
+
+        .cabin-walls {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .wall-line {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: #6b2828;
+        }
+
+        .wall-line:nth-child(1) { top: 10px; }
+        .wall-line:nth-child(2) { top: 20px; }
+        .wall-line:nth-child(3) { top: 30px; }
+
+        .windows-row {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            padding: 0 10px;
+            height: 12px;
+        }
+
+        .windows-row.top {
+            top: 6px;
+        }
+
+        .windows-row.middle {
+            top: 18px;
+        }
+
+        .windows-row.bottom {
+            top: 30px;
+        }
+
+        .window {
+            background: #d97e4a;
+            border: 2px solid #4a1818;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .window.small {
+            width: 10px;
+            height: 10px;
+        }
+
+        .window.medium {
+            width: 15px;
+            height: 10px;
+        }
+
+        .window.tall {
+            width: 10px;
+            height: 10px;
+        }
+
+        .window.wide {
+            width: 20px;
+            height: 10px;
+        }
+
+        .tower-platform {
+            width: 110px;
+            height: 6px;
+            background: #6b2828;
+            margin: 0 auto;
+            position: relative;
+            top: -2px;
+        }
+
+        .tower-legs {
+            position: relative;
+            width: 110px;
+            height: 150px;
+            margin: 0 auto;
+        }
+
+        .leg {
+            position: absolute;
+            width: 5px;
+            background: #4a1818;
+            height: 150px;
+        }
+
+        .leg-left {
+            left: 10px;
+        }
+
+        .leg-right {
+            right: 10px;
+        }
+
+        .diagonal-brace {
+            position: absolute;
+            width: 3px;
+            background: #4a1818;
+            height: 70px;
+            transform-origin: center;
+        }
+
+        .diag-left-top {
+            top: 20px;
+            left: 10px;
+            transform: rotate(45deg) translateY(-50%);
+        }
+
+        .diag-right-top {
+            top: 20px;
+            right: 10px;
+            transform: rotate(-45deg) translateY(-50%);
+        }
+
+        .diag-left-middle {
+            top: 70px;
+            left: 10px;
+            transform: rotate(45deg) translateY(-50%);
+        }
+
+        .diag-right-middle {
+            top: 70px;
+            right: 10px;
+            transform: rotate(-45deg) translateY(-50%);
+        }
+
+        .diag-left-bottom {
+            top: 120px;
+            left: 10px;
+            transform: rotate(45deg) translateY(-50%);
+        }
+
+        .diag-right-bottom {
+            top: 120px;
+            right: 10px;
+            transform: rotate(-45deg) translateY(-50%);
+        }
+
+        .forest {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40%;
+            z-index: 5;
+        }
+
+        .tree {
+            position: absolute;
+            bottom: 0;
+        }
+
+        .tree::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+
+        .tree1 { left: 5%; }
+        .tree1::before {
+            border-width: 0 15px 50px 15px;
+            border-color: transparent transparent #1a0d1f transparent;
+        }
+
+        .tree2 { left: 12%; }
+        .tree2::before {
+            border-width: 0 20px 60px 20px;
+            border-color: transparent transparent #2d1b2e transparent;
+        }
+
+        .tree3 { left: 20%; }
+        .tree3::before {
+            border-width: 0 25px 70px 25px;
+            border-color: transparent transparent #3d2640 transparent;
+        }
+
+        .tree4 { left: 28%; }
+        .tree4::before {
+            border-width: 0 18px 55px 18px;
+            border-color: transparent transparent #4d3150 transparent;
+        }
+
+        .tree5 { left: 35%; }
+        .tree5::before {
+            border-width: 0 30px 80px 30px;
+            border-color: transparent transparent #5d3c60 transparent;
+        }
+
+        .tree6 { left: 45%; }
+        .tree6::before {
+            border-width: 0 22px 65px 22px;
+            border-color: transparent transparent #6d4770 transparent;
+        }
+
+        .tree7 { left: 55%; }
+        .tree7::before {
+            border-width: 0 20px 60px 20px;
+            border-color: transparent transparent #7d5280 transparent;
+        }
+
+        .tree8 { right: 40%; }
+        .tree8::before {
+            border-width: 0 28px 75px 28px;
+            border-color: transparent transparent #8d5d90 transparent;
+        }
+
+        .tree9 { right: 30%; }
+        .tree9::before {
+            border-width: 0 24px 68px 24px;
+            border-color: transparent transparent #6d4770 transparent;
+        }
+
+        .tree10 { right: 22%; }
+        .tree10::before {
+            border-width: 0 26px 72px 26px;
+            border-color: transparent transparent #5d3c60 transparent;
+        }
+
+        .tree11 { right: 15%; }
+        .tree11::before {
+            border-width: 0 18px 58px 18px;
+            border-color: transparent transparent #4d3150 transparent;
+        }
+
+        .tree12 { right: 8%; }
+        .tree12::before {
+            border-width: 0 22px 65px 22px;
+            border-color: transparent transparent #3d2640 transparent;
+        }
+
+        .tree13 { right: 3%; }
+        .tree13::before {
+            border-width: 0 16px 52px 16px;
+            border-color: transparent transparent #2d1b2e transparent;
+        }
+
+        .birds {
+            position: absolute;
+            top: 40%;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            z-index: 6;
+        }
+
+        .bird {
+            position: absolute;
+            width: 15px;
+            height: 10px;
+            animation: birdFly 12s linear infinite;
+        }
+
+        .bird::before,
+        .bird::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 1px;
+            background: #2d1b2e;
+            border-radius: 2px;
+        }
+
+        .bird::before {
+            left: 0;
+            transform: rotate(-20deg) scaleX(-1);
+            transform-origin: right;
+        }
+
+        .bird::after {
+            right: 0;
+            transform: rotate(20deg) scaleX(-1);
+            transform-origin: left;
+        }
+
+        .bird1 {
+            top: 60px;
+            animation-delay: 0s;
+        }
+
+        .bird2 {
+            top: 80px;
+            animation-delay: 1s;
+        }
+
+        .bird3 {
+            top: 70px;
+            animation-delay: 2s;
+        }
+
+        .bird4 {
+            top: 90px;
+            animation-delay: 3s;
+        }
+
+        @keyframes birdFly {
+            0% {
+                left: -20%;
+                top: 50%;
+                transform: scaleX(1);
+            }
+            50% {
+                left: 120%;
+                top: 30%;
+                transform: scaleX(1);
+            }
+            51% {
+                left: -20%;
+                top: 30%;
+                transform: scaleX(-1);
+            }
+            100% {
+                left: 120%;
+                top: 50%;
+                transform: scaleX(-1);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="scene">
+    <div class="sky"></div>
+
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+
+    <div class="mountain-back"></div>
+    <div class="mountain"></div>
+
+    <div class="tower">
+        <div class="tower-cabin">
+            <div class="tower-roof"></div>
+            <div class="flag-pole">
+                <div class="flag"></div>
+            </div>
+
+            <div class="cabin-walls">
+                <div class="wall-line"></div>
+                <div class="wall-line"></div>
+                <div class="wall-line"></div>
+            </div>
+
+            <div class="windows-row top">
+                <div class="window small"></div>
+                <div class="window medium"></div>
+                <div class="window small"></div>
+            </div>
+
+            <div class="windows-row middle">
+                <div class="window tall"></div>
+                <div class="window wide"></div>
+                <div class="window tall"></div>
+            </div>
+
+            <div class="windows-row bottom">
+                <div class="window small"></div>
+                <div class="window small"></div>
+                <div class="window medium"></div>
+                <div class="window small"></div>
+            </div>
+        </div>
+
+        <div class="tower-platform"></div>
+
+        <div class="tower-legs">
+            <div class="leg leg-left"></div>
+            <div class="leg leg-right"></div>
+
+            <div class="diagonal-brace diag-left-top"></div>
+            <div class="diagonal-brace diag-right-top"></div>
+            <div class="diagonal-brace diag-left-middle"></div>
+            <div class="diagonal-brace diag-right-middle"></div>
+            <div class="diagonal-brace diag-left-bottom"></div>
+            <div class="diagonal-brace diag-right-bottom"></div>
+        </div>
+    </div>
+
+    <div class="forest">
+        <div class="tree tree1"></div>
+        <div class="tree tree2"></div>
+        <div class="tree tree3"></div>
+        <div class="tree tree4"></div>
+        <div class="tree tree5"></div>
+        <div class="tree tree6"></div>
+        <div class="tree tree7"></div>
+        <div class="tree tree8"></div>
+        <div class="tree tree9"></div>
+        <div class="tree tree10"></div>
+        <div class="tree tree11"></div>
+        <div class="tree tree12"></div>
+        <div class="tree tree13"></div>
+    </div>
+
+    <div class="birds">
+        <div class="bird bird1"></div>
+        <div class="bird bird2"></div>
+        <div class="bird bird3"></div>
+        <div class="bird bird4"></div>
+    </div>
+</div>
+</body>
+</html>

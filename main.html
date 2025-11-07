@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Коллекция CSS анимаций: свечи, переключатель день/ночь и анимированное меню">
+    <meta name="keywords" content="CSS анимация, свечи, переключатель, день ночь, анимированное меню">
+    <meta name="author" content="Animation Collection">
+    <meta name="robots" content="index, follow">
+    <title>Сайт с анимациями</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <nav>
+        <a href="#page1">Анимация свечек</a>
+        <a href="#page2">Переключатель</a>
+        <a href="#page3">Анимация меню</a>
+    </nav>
+</header>
+
+<div id="page1" class="page">
+    <div class="wrapper">
+        <div class="candles">
+            <div class="light__wave"></div>
+            <div class="candle1">
+                <div class="candle1__body">
+                    <div class="candle1__eyes">
+                        <span class="candle1__eyes-one"></span>
+                        <span class="candle1__eyes-two"></span>
+                    </div>
+                    <div class="candle1__mouth"></div>
+                </div>
+                <div class="candle1__stick"></div>
+            </div>
+            <div class="candle2">
+                <div class="candle2__body">
+                    <div class="candle2__eyes">
+                        <div class="candle2__eyes-one"></div>
+                        <div class="candle2__eyes-two"></div>
+                    </div>
+                </div>
+                <div class="candle2__stick"></div>
+            </div>
+            <div class="candle2__fire"></div>
+            <div class="candle__smoke-one"></div>
+            <div class="candle__smoke-two"></div>
+        </div>
+        <div class="floor"></div>
+    </div>
+</div>
+
+<div id="page2" class="page">
+    <div class="toggle-wrapper">
+        <div class="toggle">
+            <input class="toggle-input" type="checkbox" />
+            <div class="toggle-bg"></div>
+            <div class="toggle-switch">
+                <div class="toggle-switch-figure"></div>
+                <div class="toggle-switch-figureAlt"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="page3" class="page">
+    <div class="container">
+        <div class="menu">
+            <div class="line line-top"></div>
+            <div class="line line-middle"></div>
+            <div class="line line-bottom"></div>
+        </div>
+        <svg class="circle-svg">
+            <circle class="circle-path" cx="53" cy="53" r="50"/>
+        </svg>
+    </div>
+</div>
+
+<div id="default-page" class="page" style="background: #F3F3F3; display: flex; align-items: center; justify-content: center;">
+    <div style="text-align: center; color: #673C63;">
+        <h1 style="margin-bottom: 20px;">Добро пожаловать</h1>
+        <p style="font-size: 18px;">Выберите страницу в меню</p>
+    </div>
+</div>
+</body>
+</html>
