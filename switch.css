@@ -1,0 +1,169 @@
+#page2 {
+    background-color: #F3F3F3;
+}
+
+.toggle-wrapper {
+    padding-top: 40px;
+    text-align: center;
+}
+
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    margin-left: 100px;
+    padding: 8px;
+    border-radius: 80px;
+
+}
+
+.toggle:before,
+.toggle:after {
+    content: "";
+    display: table;
+}
+
+.toggle:after {
+    clear: both;
+}
+
+.toggle-bg {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    width: 100%;
+    height: 100%;
+    background-color: #C0E6F6;
+    border-radius: 80px;
+    border: 8px solid #81C0D5;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.toggle-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid red;
+    border-radius: 80px;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.toggle-switch {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-left: 100px;
+    background-color: #F5EB42;
+    border: 8px solid #E4C74D;
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.toggle-switch-figure {
+    position: absolute;
+    bottom: -28px;
+    left: -100px;
+    display: block;
+    width: 160px;
+    height: 60px;
+    border: 16px solid #D4D4D2;
+    border-radius: 40px;
+    background-color: #fff;
+    transform: scale(0.4);
+    transition: all 0.36s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.toggle-switch-figure:after {
+    content: "";
+    display: block;
+    position: relative;
+    top: -130px;
+    right: -84px;
+    width: 30px;
+    height: 30px;
+    border: 16px solid #D4D4D2;
+    border-radius: 100%;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    transform: rotateZ(70deg);
+    background-color: #fff;
+}
+.toggle-switch-figure:before {
+    content: "";
+    display: block;
+    position: relative;
+    top: -50px;
+    right: -20px;
+    width: 60px;
+    height: 60px;
+    border: 16px solid #D4D4D2;
+    border-radius: 100%;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    transform: rotateZ(30deg);
+    background-color: #fff;
+}
+
+.toggle-switch-figureAlt {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 4px;
+    width: 4px;
+    height: 4px;
+    background-color: #EFEEDA;
+    border-radius: 100%;
+    border: 8px solid #DEE1C5;
+    box-shadow: 84px -14px 0 -6px #FCFCFC, 150px -20px 0 -6px #FCFCFC, 108px 8px 0 -8px #FCFCFC, 166px 14px 0 -4px #FCFCFC, 126px 36px 0 -8px #FCFCFC, 88px 56px 0 -4px #FCFCFC, 156px 46px 0 -6px #FCFCFC;
+    transition: all 0.36s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: scale(0);
+}
+
+.toggle-switch-figureAlt:before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 36px;
+    width: 14px;
+    height: 14px;
+    background-color: #EFEEDA;
+    border-radius: 100%;
+    border: 8px solid #DEE1C5;
+}
+
+.toggle-switch-figureAlt:after {
+    content: "";
+    position: absolute;
+    top: 38px;
+    left: 30px;
+    width: 4px;
+    height: 4px;
+    background-color: #EFEEDA;
+    border-radius: 100%;
+    border: 8px solid #DEE1C5;
+}
+
+.toggle-input:checked ~ .toggle-switch {
+    margin-left: 0;
+    border-color: #DEE1C5;
+    background-color: #FFFDF2;
+}
+
+.toggle-input:checked ~ .toggle-bg {
+
+    background-color: #484848;
+    border-color: #202020;
+}
+
+.toggle-input:checked ~ .toggle-switch .toggle-switch-figure {
+    margin-left: 80px;
+    opacity: 0;
+    transform: scale(0.1);
+}
+
+.toggle-input:checked ~ .toggle-switch .toggle-switch-figureAlt {
+    transform: scale(1);
+}
