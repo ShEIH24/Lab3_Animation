@@ -8,7 +8,7 @@
     position: absolute;
     left: 50%;
     top: 70%;
-    transform: scale(1.5, 1.5) translate(-50%, -50%);
+    transform: scale(2, 2) translate(-50%, -50%);
 }
 
 .base-platform {
@@ -156,7 +156,7 @@
     float: left;
     background: #673C63;
     transform: translate(-80%, 0%);
-    animation: changeto-lower 3s infinite linear;
+    animation: change-to-lower 3s infinite linear;
 }
 
 .short-candle-eye-right {
@@ -171,7 +171,7 @@
     float: left;
     background: #673C63;
     transform: translate(-80%, 0%);
-    animation: changeto-greater 3s infinite linear;
+    animation: change-to-greater 3s infinite linear;
 }
 
 /* Эффекты */
@@ -197,7 +197,6 @@
     height: 20px;
     background-color: red;
     border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-    background: #FF9800;
     transform: translate(-50%, -50%);
     animation: dance-fire 3s infinite linear;
 }
@@ -369,7 +368,7 @@
     94%, 3%, 11%, 19%, 27%, 35%, 43%, 51%, 58% { width: 16px; height: 20px; background: #FF9800; }
 }
 
-@keyframes changeto-lower {
+@keyframes change-to-lower {
     0%,70%,90% {
         padding: 0;
         display: inline-block;
@@ -392,7 +391,7 @@
     }
 }
 
-@keyframes changeto-greater {
+@keyframes change-to-greater {
     0%,70%,90% {
         top: 50%;
         padding: 0;
