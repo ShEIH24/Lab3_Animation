@@ -1,5 +1,6 @@
 #page3 {
     background: #1a1a1a;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -98,5 +99,3 @@
     opacity: 1;
     transition: stroke-dashoffset 0.8s ease 0.4s, opacity 0.3s ease 0.4s;
 }
-
-

@@ -6,7 +6,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    overflow-x: hidden; /* Избегаем прокрутки по X */
+    overflow: hidden;
 }
 
 header {
@@ -17,7 +17,6 @@ header {
     background: #673C63;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    /* Ускорение отрисовки */
     transform: translateZ(0);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -41,7 +40,6 @@ nav a {
     border-radius: 5px;
     transition: background 0.3s ease;
     white-space: nowrap;
-    /* Ускорение рендеринга при наведении */
     will-change: background;
 }
 
