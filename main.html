@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Коллекция CSS анимаций: свечи, переключатель день/ночь и анимированное меню">
     <meta name="keywords" content="CSS анимация, свечи, переключатель, день ночь, анимированное меню">
-    <meta name="author" content="Animation Collection">
     <meta name="robots" content="index, follow">
     <title>Сайт с анимациями</title>
     <link rel="stylesheet" href="style.css">
@@ -22,45 +21,48 @@
     </nav>
 </header>
 
-<div id="page1" class="page">
-    <div class="wrapper">
-        <div class="candles">
-            <div class="light__wave"></div>
-            <div class="candle1">
-                <div class="candle1__body">
-                    <div class="candle1__eyes">
-                        <span class="candle1__eyes-one"></span>
-                        <span class="candle1__eyes-two"></span>
-                    </div>
-                    <div class="candle1__mouth"></div>
+<div id="page1">
+    <div class="scene-container">
+        <div class="candles-group">
+            <div class="light-aura"></div>
+
+            <!-- Высокая свеча -->
+            <div class="tall-candle">
+                <div class="tall-candle-fuse"></div>
+                <div class="tall-candle-face">
+                    <span class="tall-candle-eye-left"></span>
+                    <span class="tall-candle-eye-right"></span>
                 </div>
-                <div class="candle1__stick"></div>
+                <div class="tall-candle-mouth"></div>
             </div>
-            <div class="candle2">
-                <div class="candle2__body">
-                    <div class="candle2__eyes">
-                        <div class="candle2__eyes-one"></div>
-                        <div class="candle2__eyes-two"></div>
-                    </div>
+
+            <!-- Короткая свеча -->
+            <div class="short-candle">
+                <div class="short-candle-fuse"></div>
+                <div class="short-candle-face">
+                    <div class="short-candle-eye-left"></div>
+                    <div class="short-candle-eye-right"></div>
                 </div>
-                <div class="candle2__stick"></div>
             </div>
-            <div class="candle2__fire"></div>
-            <div class="candle__smoke-one"></div>
-            <div class="candle__smoke-two"></div>
+
+            <!-- Пламя и дым -->
+            <div class="flame"></div>
+            <div class="smoke-trail-horizontal"></div>
+            <div class="smoke-trail-vertical"></div>
         </div>
-        <div class="floor"></div>
+
+        <div class="base-platform"></div>
     </div>
 </div>
 
 <div id="page2" class="page">
-    <div class="toggle-wrapper">
-        <div class="toggle">
-            <input class="toggle-input" type="checkbox" />
-            <div class="toggle-bg"></div>
-            <div class="toggle-switch">
-                <div class="toggle-switch-figure"></div>
-                <div class="toggle-switch-figureAlt"></div>
+    <div class="switch-container">
+        <div class="switch">
+            <input class="switch-input" type="checkbox" />
+            <div class="switch-bg"></div>
+            <div class="switch-knob">
+                <div class="switch-sun"></div>
+                <div class="switch-moon"></div>
             </div>
         </div>
     </div>
@@ -76,13 +78,6 @@
         <svg class="circle-svg">
             <circle class="circle-path" cx="53" cy="53" r="50"/>
         </svg>
-    </div>
-</div>
-
-<div id="default-page" class="page" style="background: #F3F3F3; display: flex; align-items: center; justify-content: center;">
-    <div style="text-align: center; color: #673C63;">
-        <h1 style="margin-bottom: 20px;">Добро пожаловать</h1>
-        <p style="font-size: 18px;">Выберите страницу в меню</p>
     </div>
 </div>
 </body>

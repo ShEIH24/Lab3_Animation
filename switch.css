@@ -2,32 +2,31 @@
     background-color: #F3F3F3;
 }
 
-.toggle-wrapper {
+.switch-container {
     padding-top: 40px;
     text-align: center;
 }
 
-.toggle {
+.switch {
     position: relative;
     display: inline-block;
     width: 200px;
     margin-left: 100px;
     padding: 8px;
     border-radius: 80px;
-
 }
 
-.toggle:before,
-.toggle:after {
+.switch:before,
+.switch:after {
     content: "";
     display: table;
 }
 
-.toggle:after {
+.switch:after {
     clear: both;
 }
 
-.toggle-bg {
+.switch-bg {
     position: absolute;
     top: -8px;
     left: -8px;
@@ -39,20 +38,19 @@
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.toggle-input {
+.switch-input {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    border: 1px solid red;
     border-radius: 80px;
     z-index: 2;
     opacity: 0;
     cursor: pointer;
 }
 
-.toggle-switch {
+.switch-knob {
     position: relative;
     width: 80px;
     height: 80px;
@@ -63,7 +61,7 @@
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.toggle-switch-figure {
+.switch-sun {
     position: absolute;
     bottom: -28px;
     left: -100px;
@@ -76,7 +74,8 @@
     transform: scale(0.4);
     transition: all 0.36s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-.toggle-switch-figure:after {
+
+.switch-sun:after {
     content: "";
     display: block;
     position: relative;
@@ -91,7 +90,8 @@
     transform: rotateZ(70deg);
     background-color: #fff;
 }
-.toggle-switch-figure:before {
+
+.switch-sun:before {
     content: "";
     display: block;
     position: relative;
@@ -107,7 +107,7 @@
     background-color: #fff;
 }
 
-.toggle-switch-figureAlt {
+.switch-moon {
     content: "";
     position: absolute;
     top: 10px;
@@ -117,12 +117,15 @@
     background-color: #EFEEDA;
     border-radius: 100%;
     border: 8px solid #DEE1C5;
-    box-shadow: 84px -14px 0 -6px #FCFCFC, 150px -20px 0 -6px #FCFCFC, 108px 8px 0 -8px #FCFCFC, 166px 14px 0 -4px #FCFCFC, 126px 36px 0 -8px #FCFCFC, 88px 56px 0 -4px #FCFCFC, 156px 46px 0 -6px #FCFCFC;
+    box-shadow: 84px -14px 0 -6px #FCFCFC, 150px -20px 0 -6px #FCFCFC,
+    108px 8px 0 -8px #FCFCFC, 166px 14px 0 -4px #FCFCFC,
+    126px 36px 0 -8px #FCFCFC, 88px 56px 0 -4px #FCFCFC,
+    156px 46px 0 -6px #FCFCFC;
     transition: all 0.36s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transform: scale(0);
 }
 
-.toggle-switch-figureAlt:before {
+.switch-moon:before {
     content: "";
     position: absolute;
     top: -12px;
@@ -134,7 +137,7 @@
     border: 8px solid #DEE1C5;
 }
 
-.toggle-switch-figureAlt:after {
+.switch-moon:after {
     content: "";
     position: absolute;
     top: 38px;
@@ -146,24 +149,23 @@
     border: 8px solid #DEE1C5;
 }
 
-.toggle-input:checked ~ .toggle-switch {
+.switch-input:checked ~ .switch-knob {
     margin-left: 0;
     border-color: #DEE1C5;
     background-color: #FFFDF2;
 }
 
-.toggle-input:checked ~ .toggle-bg {
-
+.switch-input:checked ~ .switch-bg {
     background-color: #484848;
     border-color: #202020;
 }
 
-.toggle-input:checked ~ .toggle-switch .toggle-switch-figure {
+.switch-input:checked ~ .switch-knob .switch-sun {
     margin-left: 80px;
     opacity: 0;
     transform: scale(0.1);
 }
 
-.toggle-input:checked ~ .toggle-switch .toggle-switch-figureAlt {
+.switch-input:checked ~ .switch-knob .switch-moon {
     transform: scale(1);
 }
